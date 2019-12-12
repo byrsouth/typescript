@@ -1,38 +1,17 @@
-// const person: {
-//     name: string;
-//     age: number;
-//     nickname: string,
-//     hobbies: string[],
-//     role: [number, string] // Tuple
-// } = {
-//   name: 'Byron',
-//   age: 48,
-//   nickname: 'Five0',
-//   hobbies: ['Sports', 'Chess'],
-//   role: [2, 'author']  //Tuple
-// };
+function combine(input1: number | string, input2: number | string) {
+    let result;
+    if( typeof input1 === 'number' && typeof input2 === 'number'){
+        result = input1 + input2
+    } else if( typeof input1 === 'string' && typeof input2 === 'string'){
+        result = input1.toString() + input2.toString();
+    }
+    
+    return result; 
+  }
 
-enum Role {ADMIN, READ_ONLY, AUTHOR};
+  const combinedAges = combine(30 ,26);
 
-const person= {
-  name: 'Byron',
-  age: 48,
-  nickname: 'Five0',
-  hobbies: ['Sports', 'Chess'],
-  role: Role.ADMIN
-};
+  console.log(combinedAges);
 
-
-
-let favoriteActivities: string[];
-favoriteActivities = ['Chess'];
-
-console.log(person.nickname);
-
-for (const hobby of person.hobbies ) {
-    console.log(hobby);
-}
-
-if(person.role === Role.ADMIN){
-    console.log('is author');
-}
+  const combinedNames = combine('Max', 'Anna');
+  console.log(combinedNames);
