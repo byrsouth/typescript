@@ -1,15 +1,23 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
-  const result = n1 + n2
-    if(showResult){
-        console.log(phrase + result);
+function combine(
+    input1: number | string,
+    input2: number | string,
+    resultConversion: 'as-number' | 'as-text') {
+
+    let result: any;
+    if( typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number'){
+        result = +input1 + +input2
     } else {
-        return result;
-    }    
-}
+        result = input1.toString() + input2.toString();
+    }
 
-const number1 = 5;
-const number2 = 2.8;
-const printResult = true;
-const resultPhase = 'The result is: '
+    return result; 
+  }
 
-const result = add(number1, number2, printResult, resultPhase);
+  const combinedAges = combine(30 ,26, 'as-number');
+  console.log(combinedAges);
+
+  const combinedStringAges = combine('30', '26', 'as-number');
+  console.log(combinedStringAges);
+
+  const combinedNames = combine(2, 'Anna', 'as-text');
+  console.log(combinedNames);  
