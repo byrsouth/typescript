@@ -1,32 +1,15 @@
-function add(n1: number, n2: number): number{
-    return n1 + n2;
+let userInput: unknown;
+let userName: string;
+
+userInput = 5;
+userInput = 'Byron';
+
+if(typeof userInput === 'string'){
+    userName = userInput;
 }
 
-function printResults(num: number): void{
-    console.log('Result: ' + num);    
+function generateError(message: string, code: number): never{
+    throw{message: message, errorCode: code};
 }
 
-function addAndHandle(n1:number, n2: number, cb: (num: number) => void): void{
-    const result = n1 + n2;
-    cb(result);
-}
-
-function logName(name: string, cb: (name: string) => void): void {
-    const retVal = name;
-    cb(retVal);
-}
-
-printResults(add(5, 12));
-
-let combinedValues: (n1: number, n2: number) => number;
-
-combinedValues = add;
-
-console.log(combinedValues(4,9));
-addAndHandle(10, 20, (sum) => {
-    console.log(sum);
-});
-
-logName('Byron', (value) => {
-    console.log(value);
-});
+generateError('An error occured', 500);
