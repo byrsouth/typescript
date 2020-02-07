@@ -1,3 +1,4 @@
+"use strict";
 var userInput;
 var userName;
 userInput = 5;
@@ -9,3 +10,4 @@ function generateError(message, code) {
     throw { message: message, errorCode: code };
 }
 generateError('An error occured', 500);
+//# sourceMappingURL=functionTypes.js.map
